@@ -1,0 +1,130 @@
+#container {
+    background-image: 
+    linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0) 70%),
+    linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.25) 30%),
+    url('../images/login-page-bg.png');
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 865px;
+}
+
+.wrapper {
+    max-width: 1328px;
+    margin: 0 auto;
+    padding: 1.5rem 3rem;
+}
+
+
+#logo img{
+    padding: 0px 6px;
+    width: 206px;
+    height: 53px;
+}
+
+#main .wrapper {
+    margin-top: 185px;
+}
+
+#lang-login>div {
+    margin-top: 7px;
+    gap: 31px;
+}
+/* language options */
+#language-options>button {
+    padding: 4px 18px;
+}
+#language-options>button>div {
+    gap: 14px;
+}
+#language-options>button>div >:nth-child(1) {
+    font-size: 17px;
+    margin-top: 3px;
+}
+#language-options>button>div >:nth-child(2) {
+    font-size: 20px;
+}
+#language-options>button>div >:nth-child(3) {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* sign in button header */
+#sign-in-button {
+    background-color: rgb(229,9,20);
+    font-size: 18px;
+    padding: 5px 18px;
+}
+
+#tagline {
+    width: 80%;
+}
+#tagline h1 {
+    font-weight: 800 !important;
+    font-size: 60px !important;
+    transform: scale(1.01);
+}
+
+#sub-heading-sub-tagline h3 {
+    font-size: 29px !important;
+}
+
+#sub-heading-membership-tag h4 {
+    font-size: 25px !important;
+}
+
+#email-login-setup {
+    margin-top: -15px;
+}
+#email-login-setup .row {
+    margin: 0 !important;
+}
+
+section.email-input-bar {
+    width: 38% !important;
+    padding: 4px;
+    border-radius: 0.45rem;
+}
+section.email-input-bar:focus-within {
+    box-shadow: 0 0 0 2px white;
+    outline-offset: 2px;
+}
+
+#email-box label {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+.def-label {
+    font-size: 1.3rem;
+    font-weight: 400;
+    left: 4px;
+}
+.onclick-label {
+    font-size: 1rem;
+    top: 6px;
+    left: 6px;
+    font-weight: 600;    
+}
+
+#email-box input {
+    line-height: 1.68;
+    font-size: 1.28rem;
+    font-weight: 400;
+    background-color: #121010c9;
+    border: 2px solid rgb(118,118,118);
+    border-radius: .35rem !important;
+}
+#email-box input:focus {
+    border: 2px solid rgb(118,118,118) !important;
+    box-shadow: none !important;
+}
+
+button#email_submission {
+    background-color: rgb(229,9,20);
+    font-size: 1.63rem;
+    font-weight: 400;
+    padding: 12px 23px;
+}
+.dark-red-hover:hover {
+    background-color: #C11119 !important;
+}

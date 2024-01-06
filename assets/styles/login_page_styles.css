@@ -1,0 +1,100 @@
+#login-container {
+    background-image: 
+    linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0) 40%),
+    linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.25) 30%),
+    url('../images/login-page-bg.png');
+
+    background-size: cover;
+    background-position: center;
+    height: 865px;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.login-wrapper {
+    width: 95% !important;
+    margin: 0 auto;
+}
+nav#nav-bar {
+    padding: 29px 2px 20px;
+}
+#logo-container img {
+    width: 220px;
+    height: 60px;
+}
+
+section#login-form-wrap {
+    width: 550px;
+    padding: 110px 80px 60px;
+    background-color: #020100d2;
+}
+
+Section#login-form-wrap div.row {
+    margin: 0;
+}
+section#login-form-wrap div.row>* {
+    padding: 0;
+}
+#sign-in-label h1{
+    top: -36px;
+}
+
+#login-pass-wrapper label {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+.def-label {
+    font-size: 1.2rem;
+    font-weight: 300;
+    left: 24px;
+}
+.onclick-label {
+    font-size: 0.85rem;
+    top: 6px;
+    left: 24px;
+    font-weight: 300;    
+}
+#login-pass-wrapper input {
+    line-height: 1.4;
+    font-size: 1.28rem;
+    padding-top: 26px !important;
+}
+#login-pass-wrapper input:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.text-grey {
+    color: #8c8c8c !important;
+}
+.bg-grey {
+    background-color: #333 !important;
+}
+.text-light-grey {
+    color: #b3b3b3 !important;
+}
+#check-box-info-section section>* {
+    font-size: 1.05rem;
+}
+input#rememberMe {
+    font-size: 1.21rem;
+    border-radius: 2px;
+    margin-top: 3px;
+}
+input#rememberMe:focus {
+    box-shadow: none;
+    /* background-color: #fff !important; */
+}
+#signinbtn {
+    height: 62px !important;
+    background-color: rgb(229,9,20);
+    font-size: 1.28rem;
+    font-weight: 500;
+}
+
+#other-items-signin-wrapper>div.d-flex>* {
+    font-size: 1.15rem;
+    font-weight: 400;
+}
+a:hover {
+    text-decoration: underline !important;
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Home</title>
+    <link rel="stylesheet" href="assets/styles/home_page_styles.css">
+    <script src="https://kit.fontawesome.com/534bf90a70.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="assets/logo/netflix_symbol/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>    
+    <section id="container-home" class="">
+        <div class="d-flex row justify-content-center align-items-center">
+            <div id="bg-img-wrapper">
+                <div class="d-flex row align-items-start justify-content-between h-100">
+                    <header id="header" class="">
+                        <div class="home-wrapper mx-auto">
+                            <nav id="nav-bar" class="px-2 pb-2">
+                                <div class="d-flex col justify-content-between">
+                                    <section id="logo-container">
+                                        <img class="btn p-0 border-0" src="assets/logo/netflix_logo/Netflix_Logo_RGB.png" alt="">
+                                    </section>
+                                    <section id="search-theme-profile">
+                                        <div class="d-flex row gap-2 justify-content-between align-items-center">
+                                            <section id="search-movies"></section>
+                                            <section id="toggle-day-dark"></section>
+                                            <section id="profile"></section>
+                                        </div>
+                                    </section>
+                                </div>
+                            </nav>
+                        </div>
+                    </header>
+                    <aside id="aside" class="flex-grow-1">
+                        <div class="d-flex row justify-content-center h-100 align-items-end">
+                            <section id="featured-movie-section" class="mx-auto">
+                                <div class="d-flex row justify-content-between align-items-center gap-2">
+                                    <section id="movie-title" class="">
+                                        <span class="font-weight-bold">Title</span>
+                                    </section>
+                                    <section id="movie-watch-add">
+                                        <div class="d-flex col gap-2 justify-content-start align-items-center">
+                                            <section id="watch-movie">
+                                                    <button class="btn btn-dark text-light border-secondary" title="" type="button">
+                                                        <div class="d-flex col justify-content-between align-items-center gap-2">
+                                                            <i class="fa-solid fa-play"></i>
+                                                            <span class="play-button-icon button-font">Watch</span>
+                                                        </div>
+                                                    </button>
+                                            </section>
+                                            <section id="add-movie" class="">
+                                                <button class="btn btn-dark text-light border-secondary button-font" title="" type="button">Movie Info</button>
+                                            </section>
+                                        </div>
+                                    </section>
+                                    <section id="movie-desc">
+                                        <p class="text-secondary text-light">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat magnam, error similique debitis neque ratione nemo sequi architecto rerum magni aliquam quis modi nostrum aliquid eius eligendi necessitatibus eaque. Qui?
+                                        </p>
+                                    </section>
+                                </div>
+                            </section>
+                            <section id="toggle-img-bg" class="m-0">
+                                <div class="d-flex row align-items-end justify-content-center h-100">
+                                    <button class="btn h-100" type="button" title="">
+                                        <div class="d-flex row align-items-center justify-content-center">
+                                            <i class="fa-solid fa-chevron-down"></i>
+                                            <i class="fa-solid fa-chevron-up d-none"></i>
+                                        </div>
+                                    </button>
+                                </div>
+                            </section>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+            <main id="main" class="rounded">
+                <div class="home-wrapper mx-auto">
+                    <div class="d-flex row justify-content-start align-items-center mt-4">
+                        <section id="netflix-movies-section">
+                            <div class="d-flex row gap-4 justify-content-between align-items-center">
+                                <section id="netflix-originals-movies">
+                                    <div class="d-flex row justify-content-between align-items-center">
+                                        <section id="netflix-originals-titleX">
+                                            <h3>Netflix Originals - Movies</h3>
+                                        </section>
+                                        <section id="netflix-originals-moviesX" class="position-relative">
+                                            <button type="button" class="btn scroll-btn left-scroll d-none start-0 position-absolute"><i class="fa-solid fa-chevron-left"></i></button>
+                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between mt-2"></ul>
+                                            <button type="button" class="btn scroll-btn right-scroll end-0 position-absolute"><i class="fa-solid fa-chevron-right"></i></button>
+                                        </section>    
+                                    </div>
+                                </section>
+                                <section id="netflix-originals-tv">
+                                    <div class="d-flex row justify-content-between align-items-center">
+                                        <section id="netflix-originals-titleY">
+                                            <h3>Netflix Originals - TV Shows</h3>
+                                        </section>
+                                        <section id="netflix-originals-tvY" class="position-relative">
+                                            <button type="button" class="btn scroll-btn left-scroll d-none start-0 position-absolute"><i class="fa-solid fa-chevron-left"></i></button>
+                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between mt-2"></ul>
+                                            <button type="button" class="btn scroll-btn right-scroll end-0 position-absolute"><i class="fa-solid fa-chevron-right"></i></button>
+                                        </section>    
+                                    </div>
+                                </section>
+                                <section id="trending-now-movies">
+                                    <div class="d-flex row justify-content-between align-items-center">
+                                        <section id="trending-now-titleX">
+                                            <h3>Trending Now - Movies</h3>
+                                        </section>
+                                        <section id="trending-now-moviesX" class="position-relative">
+                                            <button type="button" class="btn scroll-btn left-scroll d-none start-0 position-absolute"><i class="fa-solid fa-chevron-left"></i></button>
+                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between mt-2"></ul>
+                                            <button type="button" class="btn scroll-btn right-scroll end-0 position-absolute"><i class="fa-solid fa-chevron-right"></i></button>
+                                        </section>    
+                                    </div>
+                                </section>
+                                <section id="trending-now-tv">
+                                    <div class="d-flex row justify-content-between align-items-center">
+                                        <section id="trending-now-titleY">
+                                            <h3>Trending Now - TV Shows</h3>
+                                        </section>
+                                        <section id="trending-now-tvY" class="position-relative">
+                                            <button type="button" class="btn scroll-btn left-scroll d-none start-0 position-absolute"><i class="fa-solid fa-chevron-left"></i></button>
+                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between mt-2"></ul>
+                                            <button type="button" class="btn scroll-btn right-scroll end-0 position-absolute"><i class="fa-solid fa-chevron-right"></i></button>
+                                        </section>    
+                                    </div>
+                                </section>
+                                <section id="top-rated">
+                                    <div class="d-flex row justify-content-between align-items-center">
+                                        <section id="top-rated-title">
+                                            <h3>Top Rated</h3>
+                                        </section>
+                                        <section id="top-rated-movies" class="position-relative">
+                                            <button type="button" class="btn scroll-btn left-scroll d-none start-0 position-absolute"><i class="fa-solid fa-chevron-left"></i></button>
+                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between mt-2"></ul>
+                                            <button type="button" class="btn scroll-btn right-scroll end-0 position-absolute"><i class="fa-solid fa-chevron-right"></i></button>
+                                        </section>    
+                                    </div>
+                                </section>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer pt-5 pb-3">
+                <div class="home-wrapper mx-auto bg-primary text-white text-center py-3">
+                  <span>Created by Ashutosh Singh Rawat on 15 Nov 2023</span>
+                </div>
+            </footer>
+        </div>
+    </section>
+    <!-- preloader js -->
+    <script src="assets/scripts/functional_scripts/dot-loader.js"></script>
+    <!-- basic variables and functions scripts -->
+    <script src="assets/scripts/functional_scripts/variable_functions.js"></script>
+    <!-- home page scripts -->
+    <script src="assets/scripts/script_home.js"></script>
+</body>
+</html>
+
+<!-- <section id="wishlist">
+    <div class="d-flex row justify-content-between align-items-center">
+        <section id="wishlist-title">
+            <h3>My Wishlist</h3>
+        </section>
+        <section id="wishlist-movies">
+            <ul class="d-flex col gap-2 justify-content-start align-items-between"></ul>
+        </section>    
+    </div>
+</section> -->

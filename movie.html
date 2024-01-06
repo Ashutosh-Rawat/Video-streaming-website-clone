@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+    <script src="https://kit.fontawesome.com/534bf90a70.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="assets/logo/netflix_symbol/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles/movie_info_styles.css">
+</head>
+<body>
+    <section id="movie-container" class="mx-auto">
+        <div class="d-flex row justify-content-between align-items-center">
+            <header id="movie-header" class="">
+                <div class="movie-wrapper">
+                    <nav id="movie-nav" class="px-4 pt-3 pb-2">
+                        <div class="d-flex col justify-content-between">
+                            <section id="logo-container" class="col-lg-3">
+                                <img class="w-50 btn p-0 border-0" src="assets/logo/netflix_logo/Netflix_Logo_RGB.png" alt="">
+                            </section>
+                            <section id="profile"></section>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <main id="movie-main">
+                <div class="movie-wrapper">
+                    <section id="menu-buttons" class="w-50 mx-auto">
+                        <div class="d-flex col gap-3 justify-content-between align-items-center">
+                            <button id="overview-section-button" class="btn rounded-0 active-button" type="button">
+                                <div class="d-flex col gap-2 align-items-center justify-content-between">
+                                    <span class="secondary-text">Overview</span>
+                                    <!-- <i class="fa-solid fa-caret-down"></i> -->
+                                </div>
+                            </button>
+                            <button id="media-section-button" class="btn rounded-0" type="button">
+                                <div class="d-flex col gap-2 align-items-center justify-content-between">
+                                    <span class="secondary-text">Media</span>
+                                    <!-- <i class="fa-solid fa-caret-down"></i> -->
+                                </div>
+                            </button>
+                            <button id="cast-section-button" class="btn rounded-0" type="button">
+                                <div class="d-flex col gap-2 align-items-center justify-content-between">
+                                    <span class="secondary-text">Cast</span>
+                                    <!-- <i class="fa-solid fa-caret-down"></i> -->
+                                </div>
+                            </button>
+                            <button id="reviews-section-button" class="btn rounded-0" type="button">
+                                <div class="d-flex col gap-2 align-items-center justify-content-between">
+                                    <span class="secondary-text">Reviews</span>
+                                    <!-- <i class="fa-solid fa-caret-down"></i> -->
+                                </div>
+                            </button>
+                        </div>
+                    </section>
+                    <section id="overview-details">
+                        <div id="movie-bg-wrapper" class="py-4 px-4">
+                            <div class="d-flex col gap-4 justify-content-start align-items-center px-3 py-2">
+                                <section id="movie-banner" class="col-lg-3">
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <img class="rounded w-100" src="" alt="">
+                                    </div>
+                                </section>
+                                <section id="movie-details-basic" class="px-3">
+                                    <div id="movie-details-wrapper">
+                                        <ul class="d-flex row gap-3 justify-content-between align-items-center">
+                                            <li id="title-genre">
+                                                <div class="d-flex row gap-2 justify-content-between align-items-center">
+                                                    <section id="movie-title">
+                                                        <div class="d-flex col gap-2 justify-content-start align-items-center">
+                                                            <h2 id="movie-name" class="lh-1 fw-bold"></h2>
+                                                            <span id="movie-release-year" class="fs-2 pb-1 lh-1 secondary-text"></span>
+                                                        </div>
+                                                    </section>
+                                                    <section id="movie-secondary-details">
+                                                        <div class="d-flex col gap-2 justify-content-start align-items-center">
+                                                            <span id="movie-certification" class="d-flex gap-1 justify-content-start align-items-center">
+                                                                <span id="movie-certification-status" class=""></span>
+                                                                <span id="movie-release-date"></span>
+                                                            </span>
+                                                            <span class="dot">
+                                                                <i class="fa-solid fa-circle"></i>
+                                                            </span>
+                                                            <span id="movie-genre">
+                                                                <div class="d-flex col gap-1 justify-content-start align-items-center position-relative"></div>
+                                                            </span>
+                                                            <span class="dot">
+                                                                <i class="fa-solid fa-circle"></i>
+                                                            </span>
+                                                            <span id="movie-time"></span>
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                            </li>
+                                            <li id="movie-utilities">
+                                                <div class="d-flex col gap-4 justify-content-start align-items-center">
+                                                    <section id="movie-ratings">
+                                                        <div class="d-flex col gap-1 justify-content-start align-items-center">
+                                                            <section id="user-score-ratings" class="position-relative d-flex justify-content-center align-items-center">
+                                                                <div id="circle" class="position-relative m-1"></div>
+                                                                <div id="percentage" class="flex-container d-flex justify-content-start position-absolute">
+                                                                    <span id="value" class="lh-1">0</span>
+                                                                    <span id="sign" class="lh-1 mt-1">%</span>
+                                                                </div>
+                                                            </section>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                            <span id="user-score-text" class="col-lg-3 font-1 fw-bold">User Score</span>
+                                                        </div>
+                                                    </section>
+                                                    <section id="add-to-favs">
+                                                        <button class="circular-btn-wrap btn rounded-circle p-3 bg-dark-blue border-0" type="button">
+                                                            <div class="d-flex row justify-content-center align-items-center">
+                                                                <i class="fa-solid fa-heart"></i>
+                                                            </div>
+                                                        </button>
+                                                    </section>
+                                                    <!-- Section where the modal will be inserted -->
+                                                    <section id="play-trailer">
+                                                        <button type="button" class="btn accent-bg accent-border d-flex align-items-center">
+                                                            <span class="fa fa-play me-2"></span>
+                                                            <span>Play Trailer</span>
+                                                        </button>
+                                                        <section id="playerWrap" class="position-fixed top-50 start-50 translate-middle p-2 pt-0 rounded bg-dark text-light d-none">
+                                                            <div class="d-flex flex-column gap-0 align-items-center justify-content-between">
+                                                                <section id="movie-info-bar" class="border-dark p-2 text-light w-100">
+                                                                    <div class="d-flex justify-content-between align-items-center">
+                                                                        <span id="player-movie-info" class="text-light fs-5 oswald-font"></span>
+                                                                        <button type="button" class="close-button btn btn-sm btn-outline-light">Close</button>
+                                                                    </div>
+                                                                </section>
+                                                                <section id="player"></section>
+                                                            </div>
+                                                        </section>
+                                                    </section>                                                     
+                                                </div>
+                                            </li>
+                                            <li id="movie-tagline">
+                                                <span class="fst-italic fs-5 lead fw-normal secondary-text"></span>
+                                            </li>
+                                            <li id="movie-overview">
+                                                <div class="d-flex row gap-1 justify-content-between align-items-center">
+                                                    <h5 id="movie-overview-title">Overview</h5>
+                                                    <p id="movie-overview-text" class=""></p>
+                                                </div>
+                                            </li>
+                                            <li id="movie-direction-story-crew">
+                                                <ul class="d-flex col justify-content-between align-items-center w-50">
+                                                    <!-- li will have two childs with values name and work in movie .. .row class gap1 -->
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </section>
+
+                            </div>
+                        </div>
+                    </section>
+                    <section id="more-details">
+                        <div class="d-flex col gap-2 justify-content-between align-items-center">
+                            <section id="cast-reviews-media-section" class="col-lg-9">
+                                <div class="d-flex row gap-2 justify-content-between align-items-center">
+                                    <section id="top-billed-cast"></section>
+                                    <section id="movie-reviews"></section>
+                                    <section id="movie-media"></section>
+                                </div>
+                            </section>
+                            <section id="movie-stats" class="col-lg-3">
+                                <div class="d-flex row gap-3 justify-content-between align-items-center">
+                                    
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <footer id="movie-footer">
+                <div class="movie-wrapper"></div>
+            </footer>
+        </div>
+    </section>
+    <!-- preloader js -->
+    <script src="assets/scripts/functional_scripts/dot-loader.js"></script>
+    <!-- basic variables and functions -->
+    <script src="assets/scripts/functional_scripts/variable_functions.js"></script>
+    <!-- youtube loader scripts -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="assets/scripts/functional_scripts/yt_player.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- movie page scripts -->
+    <script src="assets/scripts/script_movie_overview.js"></script>
+    <script src="assets/scripts/script_movie_more_info.js"></script>
+    <!-- circle plugins -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/scripts/functional_scripts/circle-progress.js"></script>
+</body>
+</html>

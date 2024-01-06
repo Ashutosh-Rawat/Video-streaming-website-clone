@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+:root {
+    --header-height: 94px;
+    
+    /* color section */
+    --primary-bg-color: #121212; /* body */
+    --secondary-bg-color: #1C1C1C; /* movie container */
+    --primary-text-color: #FFFFFF; /*  */
+    --secondary-text-color: #AAAAAA; /* for less important text */
+    --accent-color: #E50914; /* for buttons and links */
+    --hover-color: #B20710; /* for buttons and links on hover */
+    --primary-header-color: #1C1C1C; /* for movie-header */
+    --secondary-header-color: #262626; /* for movie-nav */
+    --main-section-color: #1C1C1C; /* for movie-main */
+    --footer-color: #262626; /* for footer color */
+    --bg-black:rgb(19,18,18); /*  */
+    --bg-dark-blue:#032541; /*  */
+    --active-button-color: #01B4E4;
+    --heart-color: rgb(229, 9, 20);
+    /* bg image */
+    --backdrop-image: none;
+    /* font 1 rem */
+    --font-1: .93rem;
+    /* font families */
+    --movie-text-font: 'Oswald', sans-serif;
+}
+* {
+    color: var(--primary-text-color);
+}
+body {
+    background-color: var(--primary-bg-color);
+}
+ul {
+    list-style-type: none;
+    padding: 0; 
+}
+span {
+    display: inline-block;
+}
+h1,h2,h3,h4,h5 {
+    margin-bottom: 0 !important;
+}
+/* helper classes */
+.row {
+    margin: 0 !important;
+}
+.row>* {
+    padding: 0 !important;
+}
+/* color classes */
+.primary-header {
+    color: var(--primary-header-color) !important;
+}
+.primary-text {
+    color: var(--primary-text-color) !important;
+}
+.primary-bg {
+    background-color: var(--primary-bg-color) !important;
+}
+.secondary-header {
+    color: var(--secondary-header-color) !important;
+}
+.secondary-text {
+    color: var(--secondary-text-color) !important;
+}
+.secondary-bg {
+    background-color: var(--secondary-bg-color) !important;
+}
+.main-section-color {
+    background-color: var(--main-section-color);
+}
+.bg-black {
+    background-color: var(--bg-black);
+}
+.footer-color {
+    color: var(--footer-color) !important;
+}
+.bg-dark-blue {
+    background-color: var(--bg-dark-blue);
+}
+/* other classes */
+.font-1 {
+    font-size: var(--font-1);
+}
+
+.oswald-font {
+    font-family: var(--movie-text-font);
+}
+
+.accent-bg {
+    background-color: var(--accent-color);
+}
+.accent-bg:hover {
+    background-color: var(--hover-color);
+}
+.accent-border {
+    border-color: var(--accent-color);
+}

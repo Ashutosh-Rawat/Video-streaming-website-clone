@@ -1,0 +1,69 @@
+@import url(/assets/styles/helper_classes.css);
+
+/* page related helper classes */
+.active-button {
+    border: none;
+    border-bottom: 4px solid var(--active-button-color);
+}
+.active-button:hover {
+    border-bottom: 4px solid var(--bg-dark-blue);
+}
+.dot {
+    font-size: .25rem;
+    vertical-align: middle;
+    margin-top: 4px;
+}
+/* css sections */
+#movie-header {
+    background-color: var(--primary-header-color);
+}
+#movie-nav {
+    background-color: var(--secondary-header-color);
+}
+#movie-bg-wrapper {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.88)), var(--backdrop-image);
+    background-position: top;
+    background-size: cover;
+}
+#movie-secondary-details>div.d-flex span:not(.dot) {
+    font-size: .9rem;
+}
+#movie-ratings {
+    width: 110px;
+}
+.circular-btn-wrap i{
+    font-size: .7rem;
+}
+.circular-btn-wrap:hover {
+    background-color: var(--bg-dark-blue);
+}
+.crew-member-name {
+    font-size: 1rem !important;
+}
+.crew-member-jobs {
+    font-size: .9rem !important;
+}
+
+/* cicular progress bar */
+:root {
+    --rating-value: none;
+    --percentage-value-font: 1.6rem;
+    --percentage-sign-font: .7rem;
+}
+.flex-container {
+    top: 21px;
+    left: 20px;
+}
+#value {
+    font-size: var(--percentage-value-font);
+}
+#sign {
+    font-size: var(--percentage-sign-font);
+}
+
+/* video player */
+#player {
+    max-width: 1000px; 
+    width: 80vw; 
+    height: calc(9/16 * 80vw);
+}

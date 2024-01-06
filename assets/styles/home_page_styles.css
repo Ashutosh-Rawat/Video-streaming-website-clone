@@ -1,0 +1,154 @@
+/* @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+* {
+    box-sizing: border-box !important;
+    color: white;
+}
+:root {
+    --header-height: 94px;
+    --movie-section-height: 711px;
+    --movie-section-height-short: 320px;
+    --movie-section-height-expand: 480px;
+    --bg-black: rgb(19, 18, 18);
+    --movie-title-heading: 'Cormorant Garamond', serif;
+    --heading-font: 'Playfair Display', serif;
+    --button-font: 'Lato', sans-serif;
+    --text-font: 'Proza Libre', sans-serif;
+    --collapsed-gap: 15%;
+    --expanded-gap: 43%;
+    --h3-font: 1.7rem;
+}
+/* helper classes */
+body {
+    overflow-x: hidden;
+}
+p {
+    margin-bottom: 0 !important;
+}
+i {
+    font-size: 1rem !important;
+}
+h1, h2, h3, h4, h5 {
+    font-family: var(--heading-font);
+    font-weight: 500;
+}
+li {
+    list-style-type: none;
+}
+
+/* more classes */
+.home-wrapper {
+    width: 97%;
+}
+.row {
+    margin: 0 !important;
+}
+.row>* {
+    padding: 0 !important;
+}
+.button-font {
+    font-family: var(--button-font) !important;
+}
+
+/* specific div classes */
+#bg-img-wrapper {
+    height: var(--movie-section-height-short);
+}
+#bg-img-wrapper>.row{
+    gap: var(--collapsed-gap);
+}
+#nav-bar {
+    padding-top: 36px;
+}
+#logo-container img {
+    width: 200px;
+    height: 50px;
+}
+
+#container-home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 700px; 
+    background-image: linear-gradient(to bottom, rgba(0,0,0,1) .5%, rgba(0,0,0,0.5) 12%, rgba(0,0,0,0.2)), var(--background-image);
+    background-size: 100% 700px;
+    background-position: center;
+    z-index: -1;
+}
+#featured-movie-section {
+    width: 98.2%;
+}
+#movie-desc {
+    font-size: 1.06rem;
+}
+#movie-title>span {
+    font-family: var(--movie-title-heading);
+    font-size: 2.6rem;
+    line-height: 1;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #ff1100 10%, #FF4500, #FF8C00, #FFA500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+#toggle-img-bg{
+    height: 30px;
+}
+#toggle-img-bg>.row>button {
+    width: 100px;
+}
+#toggle-img-bg>.row>button:hover {
+    background: black;
+}
+#main {
+    background-color: var(--bg-black);
+}
+
+/* netflix movies section */
+h3{
+    font-size: var(--h3-font) !important;
+    color: red !important;
+}
+#netflix-movies-section ul {
+    padding-left: 0 !important;
+}
+#netflix-movies-section li img{
+    width: 125px;
+    height: 165px;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+#netflix-movies-section li img:hover {
+    transform: scale(1.08);
+    transition: transform 0.2s;
+}
+#netflix-movies-section>div.d-flex>section {
+    width: 99% !important;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+/* scroll button css */
+.scroll-transition {
+    transition: transform 0.5s ease;
+}
+.scroll-btn {
+    top: 45%;
+    transform: translateY(-50%);
+    padding: 14px 10px !important;
+    z-index: 10;
+}
+.scroll-btn:hover{
+    background-color: black !important;
+}
+
+.footer {
+    background-color: var(--bg-black);
+}
