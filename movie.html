@@ -11,13 +11,13 @@
 </head>
 <body>
     <section id="movie-container" class="mx-auto">
-        <div class="d-flex row justify-content-between align-items-center">
+        <div class="d-flex row no-padding justify-content-between align-items-center">
             <header id="movie-header" class="">
                 <div class="movie-wrapper">
                     <nav id="movie-nav" class="px-4 pt-3 pb-2">
                         <div class="d-flex col justify-content-between">
-                            <section id="logo-container" class="col-lg-3">
-                                <img class="w-50 btn p-0 border-0" src="assets/logo/netflix_logo/Netflix_Logo_RGB.png" alt="">
+                            <section id="logo-container" class="col-xl-3 col-lg-4 col-md-5 col-sm-7 col-12">
+                                <img class="w-50 btn no-padding border-0" src="assets/logo/netflix_logo/Netflix_Logo_RGB.png" alt="">
                             </section>
                             <section id="profile"></section>
                         </div>
@@ -34,15 +34,15 @@
                                     <!-- <i class="fa-solid fa-caret-down"></i> -->
                                 </div>
                             </button>
-                            <button id="media-section-button" class="btn rounded-0" type="button">
-                                <div class="d-flex col gap-2 align-items-center justify-content-between">
-                                    <span class="secondary-text">Media</span>
-                                    <!-- <i class="fa-solid fa-caret-down"></i> -->
-                                </div>
-                            </button>
                             <button id="cast-section-button" class="btn rounded-0" type="button">
                                 <div class="d-flex col gap-2 align-items-center justify-content-between">
                                     <span class="secondary-text">Cast</span>
+                                    <!-- <i class="fa-solid fa-caret-down"></i> -->
+                                </div>
+                            </button>
+                            <button id="media-section-button" class="btn rounded-0" type="button">
+                                <div class="d-flex col gap-2 align-items-center justify-content-between">
+                                    <span class="secondary-text">Media</span>
                                     <!-- <i class="fa-solid fa-caret-down"></i> -->
                                 </div>
                             </button>
@@ -57,16 +57,29 @@
                     <section id="overview-details">
                         <div id="movie-bg-wrapper" class="py-4 px-4">
                             <div class="d-flex col gap-4 justify-content-start align-items-center px-3 py-2">
-                                <section id="movie-banner" class="col-lg-3">
-                                    <div class="d-flex align-items-center justify-content-center">
-                                        <img class="rounded w-100" src="" alt="">
+                                <section id="movie-banner" class="col-lg-3 col-md-4 col-sm-5">
+                                    <div class="d-flex row align-items-center justify-content-center">
+                                        <img class="movie-banner-img w-100 p-0 rounded rounded-bottom-0" src="" alt="">
+                                        <section class="btn py-2 px-4 w-100 rounded rounded-top-0 bg-dark-blue dark-blue-hover" id="movie-providers">
+                                            <div class="d-flex col gap-0 justify-content-center align-items-center">
+                                                <section id="provider">
+                                                    <img src="" alt="">
+                                                </section>
+                                                <section id="provider-status-link" class="d-inline-block">
+                                                    <div class="d-flex row gap-1 no-padding justify-content-between align-items-center">
+                                                        <span id="provider-status" class="secondary-text font-1 lh-1 nowrap-space"></span>
+                                                        <a href="" id="provider-link" class="font-md bold-md lh-1 nowrap-space"></a>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </section>
                                     </div>
                                 </section>
                                 <section id="movie-details-basic" class="px-3">
                                     <div id="movie-details-wrapper">
-                                        <ul class="d-flex row gap-3 justify-content-between align-items-center">
+                                        <ul class="d-flex row no-padding gap-3 justify-content-between align-items-center">
                                             <li id="title-genre">
-                                                <div class="d-flex row gap-2 justify-content-between align-items-center">
+                                                <div class="d-flex row no-padding gap-3 justify-content-between align-items-center">
                                                     <section id="movie-title">
                                                         <div class="d-flex col gap-2 justify-content-start align-items-center">
                                                             <h2 id="movie-name" class="lh-1 fw-bold"></h2>
@@ -76,7 +89,7 @@
                                                     <section id="movie-secondary-details">
                                                         <div class="d-flex col gap-2 justify-content-start align-items-center">
                                                             <span id="movie-certification" class="d-flex gap-1 justify-content-start align-items-center">
-                                                                <span id="movie-certification-status" class=""></span>
+                                                                <span id="movie-certification-status" class="border px-1 border-secondary text-secondary"></span>
                                                                 <span id="movie-release-date"></span>
                                                             </span>
                                                             <span class="dot">
@@ -108,8 +121,8 @@
                                                         </div>
                                                     </section>
                                                     <section id="add-to-favs">
-                                                        <button class="circular-btn-wrap btn rounded-circle p-3 bg-dark-blue border-0" type="button">
-                                                            <div class="d-flex row justify-content-center align-items-center">
+                                                        <button class="circular-btn-wrap btn rounded-circle p-3 bg-dark-blue dark-blue-hover border-0" type="button">
+                                                            <div class="d-flex row no-padding justify-content-center align-items-center">
                                                                 <i class="fa-solid fa-heart"></i>
                                                             </div>
                                                         </button>
@@ -138,15 +151,15 @@
                                                 <span class="fst-italic fs-5 lead fw-normal secondary-text"></span>
                                             </li>
                                             <li id="movie-overview">
-                                                <div class="d-flex row gap-1 justify-content-between align-items-center">
+                                                <div class="d-flex row no-padding gap-1 justify-content-between align-items-center">
                                                     <h5 id="movie-overview-title">Overview</h5>
                                                     <p id="movie-overview-text" class=""></p>
                                                 </div>
                                             </li>
-                                            <li id="movie-direction-story-crew">
-                                                <ul class="d-flex col justify-content-between align-items-center w-50">
-                                                    <!-- li will have two childs with values name and work in movie .. .row class gap1 -->
-                                                </ul>
+                                            <li id="movie-direction-story-crew" class="w-100">
+                                                <div class="d-flex gap-3 justify-content-start align-items-center w-100">
+                                                    <!-- li will have two childs with values name and work in movie .. .row no-padding class gap1 -->
+                                                </div>
                                             </li>
                                         </ul>
                                     </div>
@@ -155,20 +168,80 @@
                             </div>
                         </div>
                     </section>
-                    <section id="more-details">
-                        <div class="d-flex col gap-2 justify-content-between align-items-center">
+                    <section id="more-details" class="px-4 mx-2 pt-4">
+                        <div class="d-flex col justify-content-between align-items-start w-100">
                             <section id="cast-reviews-media-section" class="col-lg-9">
-                                <div class="d-flex row gap-2 justify-content-between align-items-center">
-                                    <section id="top-billed-cast"></section>
+                                <div class="d-flex row no-padding gap-2 justify-content-between align-items-center">
+                                    <section id="top-billed-cast" class="overflow-x-auto">
+                                        <div class="d-flex row no-padding gap-2 justify-content-between align-items-center w-100">
+                                            <h5 id="top-billed-text">Top Billed Cast</h5>
+                                            <div class="class-list-wrapper w-100">
+                                                <ul class="d-flex slider-bottom overflow-auto flex-nowrap gap-2 justify-content-start align-items-center"></ul>
+                                            </div>
+                                        </div>
+                                    </section>
                                     <section id="movie-reviews"></section>
                                     <section id="movie-media"></section>
                                 </div>
                             </section>
-                            <section id="movie-stats" class="col-lg-3">
-                                <div class="d-flex row gap-3 justify-content-between align-items-center">
-                                    
+                            <aside id="show-stats" class="col-lg-3 px-3 py-4 rounded">
+                                <div class="d-flex row no-padding gap-3 justify-content-between align-items-center">
+                                    <h5 id="fact-title">Facts</h5>
+                                    <section id="show-status">
+                                        <div class="d-flex row gap-0 align-items-center justify-content-between">
+                                            <span class="stats-title">Status</span><span class="stats-text"></span>
+                                        </div>
+                                    </section>
+                                    <section id="show-type">
+                                        <div class="d-flex row gap-0 align-items-center justify-content-between">
+                                            <span class="stats-title">Type</span><span class="stats-text"></span>
+                                        </div>
+                                    </section>
+                                    <section id="show-original_language">
+                                        <div class="d-flex row gap-0 align-items-center justify-content-between">
+                                            <span class="stats-title">Original Language</span><span class="stats-text"></span>
+                                        </div>
+                                    </section>
+                                    <section id="show-original_name">
+                                        <div class="d-flex row gap-0 align-items-center justify-content-between">
+                                            <span class="stats-title">Original Title</span><span class="stats-text"></span>
+                                        </div>
+                                    </section>
+                                    <!-- tv stats -->
+                                    <section id="tv-networks">
+                                        <div class="d-flex row gap-0 align-items-center justify-content-between">
+                                            <span class="stats-title">Network</span><span class="stats-text"></span>
+                                        </div>
+                                    </section>
+                                    <section id="tv-number_of_episodes">
+                                        <div class="d-flex row gap-0 align-items-center justify-content-between">
+                                            <span class="stats-title">Episodes</span><span class="stats-text"></span>
+                                        </div>
+                                    </section>
+                                    <section id="tv-number_of_seasons">
+                                        <div class="d-flex row gap-0 align-items-center justify-content-between">
+                                            <span class="stats-title">Seasons</span><span class="stats-text"></span>
+                                        </div>
+                                    </section>
+                                    <!-- movie stats -->
+                                    <section id="movie-budget">
+                                        <div class="d-flex row gap-0 align-items-center justify-content-between">
+                                            <span class="stats-title">Budget</span><span class="stats-text"></span>
+                                        </div>
+                                    </section>
+                                    <section id="movie-revenue">
+                                        <div class="d-flex row gap-0 align-items-center justify-content-between">
+                                            <span class="stats-title">Revenue</span><span class="stats-text"></span>
+                                        </div>
+                                    </section>
+                                    <!-- common stat -->
+                                    <section id="show-homepage">
+                                        <div class="d-flex row gap-0 align-items-center justify-content-between">
+                                            <span class="stats-title">Homepage</span><span class="stats-text"></span>
+                                        </div>
+                                    </section>
                                 </div>
-                            </section>
+                            </aside>
                         </div>
                     </section>
                 </div>
@@ -190,7 +263,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- movie page scripts -->
     <script src="assets/scripts/script_movie_overview.js"></script>
-    <script src="assets/scripts/script_movie_more_info.js"></script>
     <!-- circle plugins -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/scripts/functional_scripts/circle-progress.js"></script>

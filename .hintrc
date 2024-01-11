@@ -9,7 +9,10 @@
       "default",
       {
         "ignore": [
-          "image-rendering: -o-crisp-edges"
+          "image-rendering: -o-crisp-edges",
+          "max-width: fit-content",
+          "scrollbar-width",
+          "scrollbar-color"
         ]
       }
     ]

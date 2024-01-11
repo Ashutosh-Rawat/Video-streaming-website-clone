@@ -16,12 +16,18 @@
     --footer-color: #262626; /* for footer color */
     --bg-black:rgb(19,18,18); /*  */
     --bg-dark-blue:#032541; /*  */
+    --very-dark-blue: #021a2e;
     --active-button-color: #01B4E4;
     --heart-color: rgb(229, 9, 20);
+    --light-grey-border: rgb(227,227,227);
     /* bg image */
     --backdrop-image: none;
     /* font 1 rem */
     --font-1: .93rem;
+    --font-2: .9rem;
+    --font-sm: .82rem;
+    --font-lg: 1.2rem;
+    --font-md: 1rem;
     /* font families */
     --movie-text-font: 'Oswald', sans-serif;
 }
@@ -31,9 +37,13 @@
 body {
     background-color: var(--primary-bg-color);
 }
+a {
+    text-decoration: none;
+}
 ul {
     list-style-type: none;
     padding: 0; 
+    margin-bottom: 0;
 }
 span {
     display: inline-block;
@@ -45,7 +55,7 @@ h1,h2,h3,h4,h5 {
 .row {
     margin: 0 !important;
 }
-.row>* {
+.no-padding>* {
     padding: 0 !important;
 }
 /* color classes */
@@ -79,11 +89,28 @@ h1,h2,h3,h4,h5 {
 .bg-dark-blue {
     background-color: var(--bg-dark-blue);
 }
+.dark-blue-hover:hover {
+    background-color: var(--very-dark-blue);
+}
 /* other classes */
 .font-1 {
     font-size: var(--font-1);
 }
-
+.font-xsm {
+    font-size: .78rem !important;
+}
+.font-sm {
+    font-size: var(--font-sm) !important;
+}
+.font-md {
+    font-size: var(--font-md) !important;
+}
+.bold-md {
+    font-weight: 500;
+}
+.font-lg {
+    font-size: var(--font-lg) !important;
+}
 .oswald-font {
     font-family: var(--movie-text-font);
 }
@@ -96,4 +123,33 @@ h1,h2,h3,h4,h5 {
 }
 .accent-border {
     border-color: var(--accent-color);
+}
+.object-fit-cover {
+    object-fit: cover !important;
+}
+/* specific classes */
+.nowrap-space {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    white-space: nowrap;
+}
+
+/* for sliders */
+.slider-bottom {
+    scroll-snap-type: x mandatory; /* Ensures items snap into place */
+    padding: .8rem 1.4rem;
+}
+.slider-bottom>*{
+    scroll-snap-align: start;
+}
+/* For cross-browser compatibility */
+.slider-bottom::-webkit-scrollbar {
+    height: 8px;
+}
+.slider-bottom::-webkit-scrollbar-track {
+    background: transparent;
+}
+.slider-bottom::-webkit-scrollbar-thumb {
+    background-color: #6c757d; /* Bootstrap secondary grey */
+    border-radius: 20px;
 }

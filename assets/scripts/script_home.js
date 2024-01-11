@@ -136,7 +136,7 @@ function scrollMovies() {
 
 // main functionality
 window.onload = async function() {
-    homeButton()
+    await homeButton()
     showLoader()
     // for showing featured movie .. which has a background in page
     featured_banner()

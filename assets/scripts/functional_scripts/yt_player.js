@@ -9,14 +9,18 @@ const youtubePlayer = async function onYouTubeIframeAPIReady(title) {
         }
         // Filter the results to match the movie name or contain 'official trailer'
         var filteredResults = response.results.filter(result => 
-            result.name.toLowerCase().includes('trailer') ||
             result.name.toLowerCase() === title.toLowerCase() || 
-            result.name.toLowerCase().includes('official trailer')
+            result.name.toLowerCase().includes('official trailer') ||
+            result.name.toLowerCase().includes('trailer') ||
+            result.name.toLowerCase().includes('promo' || 'promos')
         );
-        // Prioritize 'official trailer' in the filtered results
-        const sortedResults = filteredResults.sort((a, b) => 
-            b.name.toLowerCase().includes('official trailer') - a.name.toLowerCase().includes('official trailer')
-        );
+        var keywords = ['official trailer', 'trailer', title.toLowerCase(), 'promo', 'promos'];
+
+        var sortedResults = filteredResults.sort((a, b) => {
+            var scoreA = keywords.reduce((score, keyword) => score + (a.name.toLowerCase().includes(keyword) ? 1 : 0), 0);
+            var scoreB = keywords.reduce((score, keyword) => score + (b.name.toLowerCase().includes(keyword) ? 1 : 0), 0);
+            return scoreB - scoreA;
+        });
         if(Array.isArray(filteredResults) && filteredResults.length===0) {
             sortedResults = filteredResults = response.results[0]
         }

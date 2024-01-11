@@ -25,6 +25,17 @@
     background-position: top;
     background-size: cover;
 }
+/* movie streaming availability */
+#provider>img {
+    height: 36px;
+    width: 36px;
+}
+/* .movie-banner-img {
+    min-width: 400px;
+} */
+#movie-certification-status {
+    border-radius: 3px;
+}
 #movie-secondary-details>div.d-flex span:not(.dot) {
     font-size: .9rem;
 }
@@ -34,17 +45,16 @@
 .circular-btn-wrap i{
     font-size: .7rem;
 }
-.circular-btn-wrap:hover {
-    background-color: var(--bg-dark-blue);
-}
 .crew-member-name {
-    font-size: 1rem !important;
+    font-size: var(--font-md) !important;
+    white-space: nowrap;
 }
 .crew-member-jobs {
-    font-size: .9rem !important;
+    font-size: var(--font-2) !important;
 }
 
 /* cicular progress bar */
+/* keep these root values to only dedicated page scripts only to avoid value clashes */
 :root {
     --rating-value: none;
     --percentage-value-font: 1.6rem;
@@ -60,10 +70,36 @@
 #sign {
     font-size: var(--percentage-sign-font);
 }
-
 /* video player */
 #player {
     max-width: 1000px; 
     width: 80vw; 
     height: calc(9/16 * 80vw);
 }
+/* Movie cast */
+.movie-cast-item {
+    border: 1px solid var(--secondary-header-color);
+    height: 258px !important;
+    width: 145px !important;
+    flex: 0 0 auto;
+}
+.actor-profile-img {
+    height: 194px !important;
+    width: 145px !important;
+    margin-top: -4px;
+}
+/* stats */
+#show-stats {
+    background-color: var(--secondary-header-color);
+}
+#show-stats span {
+    padding: 0;
+    font-size: var(--font-1);
+}
+.stats-text {
+    color: var(--secondary-text-color);
+}
+#tv-networks .stats-text img {
+    height: 30px !important;
+}
+
