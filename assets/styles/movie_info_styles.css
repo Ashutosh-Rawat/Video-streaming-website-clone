@@ -76,6 +76,14 @@
     width: 80vw; 
     height: calc(9/16 * 80vw);
 }
+/* more details */
+#more-details img {
+    image-rendering: -o-crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+}
 /* Movie cast */
 .movie-cast-item {
     border: 1px solid var(--secondary-header-color);
@@ -90,11 +98,17 @@
 }
 /* stats */
 #show-stats {
-    background-color: var(--secondary-header-color);
+    object-fit: contain;
+    /* background-color: var(--secondary-header-color);
+    border: 2px solid var(--secondary-header-color);
+    box-shadow: 0 0 8px 3px rgba(201, 201, 201, 0.2); */
 }
 #show-stats span {
     padding: 0;
     font-size: var(--font-1);
+}
+#show-stats h5 {
+    color: var(--heart-color);
 }
 .stats-text {
     color: var(--secondary-text-color);
@@ -102,4 +116,62 @@
 #tv-networks .stats-text img {
     height: 30px !important;
 }
-
+/* media classes */
+.media-poster-img, .media-backdrop-img {
+    object-fit: contain;
+}
+.media-backdrop-img img {
+    max-height: 300px !important;
+    max-width: 533px !important;
+}
+.media-poster-img img {
+    max-height: 300px !important;
+    max-width: 200px !important;
+    display: block;
+    padding: 50px 0;
+    border: 3px solid var(--secondary-text-color);
+}
+.rounded-bg-wrapper {
+    background-color: var(--primary-header-color);
+    border-radius: 7px;
+}
+/* reviews */
+.review-profile-wrapper {
+    height: 45px;
+    width: 45px;
+}
+.review-card .review-card-text p{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+/* footer classes */
+footer {
+    background: linear-gradient(to right, 
+      rgba(33,33,33,1) 0%, 
+      rgba(33,33,33,0.7) 5%, 
+      rgba(12,12,12,0.6) 50%, 
+      rgba(33,33,33,0.7) 95%, 
+      rgba(33,33,33,1) 100%);
+}
+.social-links a {
+    font-size: 1.25rem; 
+    color: #ffffff;
+}
+.social-links a:hover {
+    color: #cccccc; 
+    opacity: 0.7;
+}
+.fa-twitter {
+    color: #1DA1F2; /* Twitter color */
+} 
+.fa-linkedin-in {
+    color: #0A66C2; /* LinkedIn color */
+} 
+.fa-hackerrank {
+    color: #2EC866; /* HackerRank color */
+}  
+.fa-github {
+    color: #2c2929; /* GitHub color */
+}

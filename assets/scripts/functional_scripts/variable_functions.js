@@ -22,10 +22,13 @@ const fetchPersonProfile = person_id => {
     return `https://www.themoviedb.org/person/${person_id}`
 }
 const getShowURL = (movieId, show_status) => {
-    return url = `https://api.themoviedb.org/3/${show_status}/${movieId}?api_key=${api_key}`
+    return `https://api.themoviedb.org/3/${show_status}/${movieId}?api_key=${api_key}`
 }
 const getCrewDetailsURL = (id, show_status) => {
     return `https://api.themoviedb.org/3/${show_status}/${id}/credits?api_key=${api_key}`
+}
+const getReviewsURL = (id, show_status) => {
+    return `https://api.themoviedb.org/3/${show_status}/${id}/reviews?api_key=${api_key}`
 }
 // const getImdbCrewDetails = (imdb_id) => {
 //     const imdb_api = `k_9l353587`
@@ -57,8 +60,10 @@ const getMovieCertification = async(id, show_status) => {
         const indiaRelease = releases.find(release => release.iso_3166_1 === 'IN')
         var usRelease;
         if (!indiaRelease) usRelease = releases.find(release => release.iso_3166_1 === 'US')            
-        if (!usRelease) return null;
-
+        for (const release of releases) {
+            const validRelease = release.release_dates[0].certification;
+            if (validRelease) return validRelease;
+        }
         return indiaRelease ? indiaRelease.release_dates[0].certification : usRelease.release_dates[0].certification;
     }
     else return data.results[0].rating 
@@ -66,6 +71,11 @@ const getMovieCertification = async(id, show_status) => {
 const getMovieCast = async(id, show_status) => {
     const resultSet = await fetchJSON(getCrewDetailsURL(id, show_status))
     return {'cast': resultSet.cast, 'crew': resultSet.crew}
+}
+const getShowMedia = async(show_id, show_status) => {
+    let media_url = `https://api.themoviedb.org/3/${show_status}/${show_id}/images?api_key=${api_key}`
+    let media = await fetchJSON(media_url)
+    return [media.backdrops, media.logos, media.posters]
 }
 // for fetching multiple movies
 const fetchMovies = async movie_url => {
@@ -138,4 +148,26 @@ const goToCastPage = (movie_id, name, show_status) => {
 }
 const networkPage = network_id => {
     return `https://www.themoviedb.org/network/${network_id}`
+}
+const goToMediaPage = (show_status, show_id, name, media_type) => {
+    const movie_name = ((name.toLowerCase()).split(' ')).join('-')
+    window.location.href = `https://www.themoviedb.org/${show_status}/${show_id}-${movie_name}/images/${media_type}`
+}
+const goToUser = username => {
+    return `https://www.themoviedb.org/u/${username}`
+}
+const seeMoreReviewsPage = (show_status,show_id,show_name) => {
+    const processedName = (show_name.split(' ')).join('-')
+    return `https://www.themoviedb.org/${show_status}/${show_id}-${processedName}/reviews`
+}
+const goToCurrentReview = review_id => {
+    return `https://www.themoviedb.org/review/${review_id}`
+}
+const processDate = input_date_time => {
+    const filteredDate = input_date_time.split('T')[0]
+    const [year, month, date] = filteredDate.split('-')
+    const typeNum = {'year':year, 'month':month, 'day':date}
+    let months = {1:'January', 2:'February', 3:'March', 4:'April', 5:'May', 6:'June', 7:'July', 8:'August', 9:'September', 10:'October', 11:'November', 12:'December'}
+    const typeName = {'year':year, 'month':months[Number(month)], 'date':date}
+    return [typeNum, typeName]
 }

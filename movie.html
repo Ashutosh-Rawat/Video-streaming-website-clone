@@ -169,22 +169,44 @@
                         </div>
                     </section>
                     <section id="more-details" class="px-4 mx-2 pt-4">
-                        <div class="d-flex col justify-content-between align-items-start w-100">
+                        <div class="d-flex col gap-3 justify-content-between align-items-start w-100">
                             <section id="cast-reviews-media-section" class="col-lg-9">
-                                <div class="d-flex row no-padding gap-2 justify-content-between align-items-center">
-                                    <section id="top-billed-cast" class="overflow-x-auto">
+                                <div class="d-flex row no-padding gap-4 justify-content-between align-items-center">
+                                    <section id="top-billed-cast" class="mt-2">
                                         <div class="d-flex row no-padding gap-2 justify-content-between align-items-center w-100">
-                                            <h5 id="top-billed-text">Top Billed Cast</h5>
-                                            <div class="class-list-wrapper w-100">
+                                            <h5 id="top-billed-text" class="sm-text-heading cursor-pointer w-fit-content">Top Billed Cast</h5>
+                                            <div class="class-list-wrapper w-100 rounded-bg-wrapper">
                                                 <ul class="d-flex slider-bottom overflow-auto flex-nowrap gap-2 justify-content-start align-items-center"></ul>
                                             </div>
                                         </div>
                                     </section>
-                                    <section id="movie-reviews"></section>
-                                    <section id="movie-media"></section>
+                                    <section id="show-media" class="mt-2">
+                                        <div class="d-flex row no-padding gap-2 justify-content-between align-items-center w-100">
+                                            <div class="media-selection-wrapper">
+                                                <h5 id="show-media-text" class="sm-text-heading mt-2 cursor-pointer w-fit-content">Media</h5>
+                                            </div>
+                                            <div class="media-list-wrapper w-100 rounded-bg-wrapper">
+                                                <ul class="d-flex slider-bottom overflow-auto flex-nowrap gap-2 justify-content-start align-items-center"></ul>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <section id="show-reviews" class="mt-2">
+                                        <div class="d-flex row no-padding gap-2 justify-content-between align-items-center w-100">
+                                            <h5 id="show-review-text" class="sm-text-heading mt-2 cursor-pointer w-fit-content">Reviews</h5>
+                                            <div class="reviews-list-wrapper w-100 rounded-bg-wrapper">
+                                                <ul class="d-flex gap-2 justify-content-start align-items-center"></ul>
+                                            </div>
+                                            <div class="reviews-more-wrapper d-flex gap-1 align-items-center justify-content-start">
+                                                <a href="">
+                                                    <span class="more-reviews-text text-decoration-underline">See more reviews</span>
+                                                    <span class="more-reviews-count text-secondary"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </section>
                                 </div>
                             </section>
-                            <aside id="show-stats" class="col-lg-3 px-3 py-4 rounded">
+                            <aside id="show-stats" class="col-lg-3 px-3 py-4 rounded-bg-wrapper">
                                 <div class="d-flex row no-padding gap-3 justify-content-between align-items-center">
                                     <h5 id="fact-title">Facts</h5>
                                     <section id="show-status">
@@ -237,7 +259,7 @@
                                     <!-- common stat -->
                                     <section id="show-homepage">
                                         <div class="d-flex row gap-0 align-items-center justify-content-between">
-                                            <span class="stats-title">Homepage</span><span class="stats-text"></span>
+                                            <span class="stats-title">Homepage</span><span class="stats-text dot-overflow"></span>
                                         </div>
                                     </section>
                                 </div>
@@ -246,9 +268,26 @@
                     </section>
                 </div>
             </main>
-            <footer id="movie-footer">
-                <div class="movie-wrapper"></div>
-            </footer>
+            <footer id="movie-footer" class="mt-4 mb-2 w-100 mx-auto rounded text-center py-4">
+                <p class="text-white mb-0 mt-2">Created by Ashutosh Singh Rawat</p>
+                <div class="d-flex justify-content-center align-items-center pt-2">
+                    <a href="https://twitter.com/NerdForNothing" class="text-white mx-2">
+                        <i class="fab fa-twitter fa-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/aashu-rawat/" class="text-white mx-2">
+                        <i class="fab fa-linkedin-in fa-lg"></i>
+                    </a>
+                    <a href="https://www.hackerrank.com/profile/ashutoshrawat325" class="text-white mx-2">
+                        <i class="fab fa-hackerrank fa-lg"></i>
+                    </a>
+                    <a href="https://github.com/Ashutosh-Rawat" class="text-white mx-2">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                </div>
+                <p class="text-white-50 mt-3">
+                    If you appreciate the design inspired by themoviedb.org, feel free to show your support on my social media. Thank you!
+                </p>
+            </footer>                        
         </div>
     </section>
     <!-- preloader js -->

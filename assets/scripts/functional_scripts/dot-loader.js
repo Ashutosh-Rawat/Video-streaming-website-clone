@@ -1,12 +1,9 @@
 // JavaScript
 async function showLoader() {
+    document.body.classList.add('bg-black', 'overflow-y-hidden')
     // Create style element for loader
     let style = document.createElement('style');
     style.innerHTML = `
-    body {
-        background-color: black;
-        overflow-y: hidden;
-    }
     .dot-loader {
         display: flex;
         justify-content: space-around;
@@ -61,6 +58,6 @@ async function showLoader() {
     setTimeout(() => {
         loader.style.display = 'none';
         firstChild.classList.remove('hidden');
-        document.body.style.overflowY = 'auto'
+        document.body.classList.remove('overflow-y-hidden')
     }, 3000);
 }

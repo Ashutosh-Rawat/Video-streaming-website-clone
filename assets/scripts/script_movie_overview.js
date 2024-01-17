@@ -35,7 +35,7 @@ async function getCrewDetails() {
     // Sort the array by popularity
     crewArray.sort((a, b) => b.popularity - a.popularity)
     // Get the two most popular crew members
-    let mostPopularCrew = crewArray.slice(0, 2)
+    let mostPopularCrew = crewArray.slice(0, 3)
     return mostPopularCrew
 }
 function displayCrew(crewName) {
@@ -123,8 +123,6 @@ const displayMovieDetails = async(result, crewName) => {
     var runtime_hr = (result.runtime/60)>1 ? Math.floor(result.runtime/60)+'h' : ''
     var runtime_min = (result.runtime%60)>1 ? result.runtime%60+'m' : ''
     document.getElementById('movie-time').innerText = `${runtime_hr} ${runtime_min}`    
-    // movie cast, reviews, media
-    // console.log(result)
 }
 const displayTVShowDetails = async(result, crewName) => {
     await displayOverview(result, crewName)
@@ -133,8 +131,6 @@ const displayTVShowDetails = async(result, crewName) => {
     document.querySelectorAll('.dot').forEach(div => {
         div.style.display = 'None'
     })
-    // movie cast, reviews, media
-    // console.log(result)
 }
 const displayOverview = async(result, crewName) => {
     // background image wrapper
@@ -187,53 +183,50 @@ const displayMoreDetails = async (result) => {
     });
     var movieCast = (await getMovieCast(Id, show_status)).cast;
     movieCast = movieCast.slice(0, 10);
-    console.log(movieCast);
     if (!movieCast.length) return document.getElementById('top-billed-cast').style.display = 'none';
     if (show_status === 'tv') document.getElementById('top-billed-text').innerText = 'Series Cast';
     const list_wrap = document.querySelector('#top-billed-cast ul');
+    if(movieCast.length<6) {
+        list_wrap.classList.remove('justify-content-start')
+        list_wrap.classList.add('justify-content-center')
+    }
     movieCast.forEach((actor) => {
         createActorElement(actor, list_wrap); // no need to pass index and gap
     });
 }
-
 const createActorElement = (actor, parentElement) => {
     const actorElement = document.createElement('li');
     actorElement.className = 'movie-cast-item rounded overflow-hidden';
     actorElement.innerHTML = `
-        <div class="d-flex row gap-0 align-items-center justify-content-top h-100 w-100">
+        <div class="d-flex row gap-0 align-items-center justify-content-top h-100 w-100 bg-black">
             <a href="${fetchPersonProfile(actor.id)}" class="p-0 w-100 d-block">
                 <img src="${fetchImage(actor.profile_path)}" class="actor-profile-img">
             </a>
             <section class="py-2 px-2">
                 <div class="actor-info d-flex row gap-0 justify-content-start no-padding">
                     <a href="${fetchPersonProfile(actor.id)}" class="fw-bold font-sm nowrap-space w-75 p-0 text-light">${actor.name}</a>
-                    <span class="text-secondary font-xsm nowrap-space w-75">${actor.character}</span>
+                    <span class="text-secondary font-xsm nowrap-space w-100 dot-overflow">${actor.character}</span>
                 </div>
             </section>
         </div>`;
     parentElement.appendChild(actorElement);
 }
-
 const displayMovieStats = (result) => {
-    console.log(result)
     let type = result.title ? 'tv' : 'movie'
     const statSections = document.querySelectorAll(`#show-stats>div.d-flex>*:not(#fact-title)`)
     // 0,1,2,3 in common_section 4,5,6 in tv_section 7,8 in movie_section 9 in common_section
-    console.log(statSections)
     statSections.forEach(section => {
         if(section.id.startsWith(type)) {
-            console.log('removed: ', section.id)
             section.remove()
             return
         }
         let resultSet = section.id.split('-')
         let section_attr = resultSet[1]
-        console.log(section_attr)
         const section_text = result[section_attr]
         const section_div = section.querySelector('.stats-text')
         if(!section_text || Array.isArray(section_text) && (!section_text.length)) section.remove()
         if((section.id.endsWith('networks'))) {
-            section_div.innerHTML =`<a href=${networkPage(section_text[0].id)}><img src=${fetchImage(section_text[0].logo_path)}></img></a>`
+            section_div.innerHTML =`<a href=${networkPage(section_text[0].id)}><img class="mt-1" src=${fetchImage(section_text[0].logo_path)}></img></a>`
         }
         else if((section.id.endsWith('homepage'))) {
             section_div.innerHTML = `<a href=${section_text}>${section_text}</a>`
@@ -244,7 +237,80 @@ const displayMovieStats = (result) => {
         else section_div.innerText = section_text
     })
 }
-
+const displayMedia = async(result) => {
+    let [backdrop_media, poster_media] = await getShowMedia(result.id, show_status);
+    if(Array.isArray(backdrop_media) && backdrop_media.length===0) document.querySelectorAll('#show-media').remove()
+    let filteredBackdrop = backdrop_media.sort((a, b) => b.vote_average - a.vote_average).slice(0, 10);
+    filteredBackdrop.forEach(media => {
+        let media_div = document.querySelector('.media-list-wrapper>ul');
+        if(filteredBackdrop.length==1){
+            media_div.classList.remove('justify-content-start')
+            media_div.classList.add('justify-content-center')
+        }
+        let media_list_item = document.createElement('li');
+        media_list_item.classList.add('media-backdrop-img','h-100')
+        const media_img = document.createElement('img');
+        media_img.src = fetchImage(media.file_path);
+        media_img.classList.add('rounded', 'h-100', 'bg-black');
+        media_list_item.appendChild(media_img);
+        media_div.appendChild(media_list_item);
+    });
+    document.querySelector('#show-media-text').addEventListener('click', () => goToMediaPage(show_status, result.id, result.title ? result.title : result.name, 'backdrops'))    
+};
+const displayReviews = async(result) => {
+    const reviews = await fetchGenericURL(getReviewsURL(result.id, show_status))
+    var reviews_hasRating = reviews.filter(review => Object.values(review.author_details).every(value => value))
+    console.log(reviews_hasRating)
+    const reviewsSection = document.querySelector('.reviews-list-wrapper>ul')
+    if(Array.isArray(reviews_hasRating) && (reviews_hasRating.length)) {
+        const review = reviews_hasRating[0]
+        reviewCardWrapper = document.createElement('li')
+        reviewCardWrapper.classList.add('review-card-wrapper')
+        reviewCardWrapper.innerHTML = 
+        `<div class="review-card px-3 pt-3 pb-2 rounded-bg-wrapper">
+            <div class="d-flex row no-padding gap-2 justify-content-between align-items-start">
+                <section class="review-card-info">
+                    <div class="d-flex gap-3 justify-content-start align-items-center">
+                        <a class="review-profile-wrapper d-block rounded-circle overflow-hidden" href="${goToUser(review.author_details.username)}">
+                            <img class="review-user-profile w-100 h-100" src="${fetchImage(review.author_details.avatar_path)}" alt="no-img">
+                        </a>
+                        <section class="review-info-wrapper">
+                            <div class="d-flex row no-padding gap-0 justify-content-start align-items-center">
+                                <section class="review-profile-name cursor-pointer bold-md font-xmd" onclick="window.location.href='${review.url}'">A review by <span>${review.author_details.name}</span></section>
+                                <section class="review-rating-username-date">
+                                    <div class="d-flex gap-1 justify-content-start align-items-center">
+                                        <div class="d-flex gap-1 justify-content-between align-items-center p-1 rounded bg-black">
+                                            <span class="review-user-rating font-1 lh-1">${review.author_details.rating}</span>
+                                            <i class="fa-solid fa-star font-xsm bold-md"></i>
+                                        </div>
+                                        <span class="review-username-date font-xxsm text-secondary">
+                                            <a href="${goToUser(review.author_details.username)}" class="review-username">@${review.author_details.username}</a> on <span class="review-date text-secondary">${processDate(review.updated_at)[1].month} ${processDate(review.updated_at)[1].date}, ${processDate(review.updated_at)[1].year}</span>
+                                        </span>
+                                    </div>
+                                </section>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+                <section class="review-card-text">
+                    <p class="cursor-pointer bold-sm font-smd" onclick="window.location.href='${review.url}'">${review.content}</p>
+                </section>
+            </div>
+        </div>`
+        reviewsSection.appendChild(reviewCardWrapper)
+        // got to reviews page too:
+        document.querySelector('.reviews-more-wrapper a').href = seeMoreReviewsPage(show_status, result.id, result.name ? result.name : result.title)
+        document.querySelector('.reviews-more-wrapper .more-reviews-count').innerText = reviews.length
+        return
+    }
+    reviewsSection.innerHTML = `
+    <li class="w-100">
+        <div class="no-review-card px-3 py-5 rounded-bg-wrapper text-center">
+            <p class="bold-md font-md lh-1 m-0">Sorry, no reviews yet...</p>
+        </div>
+    </li`
+    document.querySelector('.reviews-more-wrapper').remove()
+}
 window.onload = async () => {
     // this shows the preloader
     showLoader()
@@ -267,6 +333,8 @@ window.onload = async () => {
 
     await displayMoreDetails(resultDetails)
     displayMovieStats(resultDetails)    
+    await displayMedia(resultDetails)
+    await displayReviews(resultDetails)
     // youtube player btn
     await youtubePlayer(show_status=='movie' ? resultDetails.title : resultDetails.name)
 }
