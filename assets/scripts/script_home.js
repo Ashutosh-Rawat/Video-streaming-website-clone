@@ -73,9 +73,11 @@ async function generatePoster(results, currentDiv) {
                 else show_status = 'movie'
 
                 let baseUrl = window.location.origin;
-                let newUrl = baseUrl + "/movie.html"+`?id=${result.id}&show_status=${show_status}`;
-                console.log(newUrl)
-                // window.location.href = newUrl
+                if (baseUrl.startsWith("https://") && !baseUrl.endsWith("/Video-streaming-website-clone")) {
+                    baseUrl = baseUrl + "/Video-streaming-website-clone";
+                }        
+                let newUrl = baseUrl + "/movie.html" + `?id=${result.id}&show_status=${show_status}`;
+                console.log(newUrl);
             });
         })
     } else {
