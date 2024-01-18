@@ -9,10 +9,10 @@ const getOriginals = (status) => {
 const getTopRated = () => {
     return `https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}`
 }
-const searchQuery = showName => {
+const searchQuery = (show_status, showName) => {
     showName = showName.split(' ')
     showName = showName.join('+')
-    return `https://api.themoviedb.org/3/search/movie?query=${showName}&api_key=${api_key}`
+    return `https://api.themoviedb.org/3/search/${show_status}?query=${showName}&api_key=${api_key}`
 }
 // starts single movie detail functions
 const fetchImage = path => {
@@ -30,10 +30,6 @@ const getCrewDetailsURL = (id, show_status) => {
 const getReviewsURL = (id, show_status) => {
     return `https://api.themoviedb.org/3/${show_status}/${id}/reviews?api_key=${api_key}`
 }
-// const getImdbCrewDetails = (imdb_id) => {
-//     const imdb_api = `k_9l353587`
-//     return `https://imdb-api.com/en/API/FullCast/${imdb_api}/${imdb_id}`
-// }
 // generic info urls
 const movieReleaseDatesLocal = async(movie_id) => {
     let req_url = `https://api.themoviedb.org/3/movie/${movie_id}/release_dates?api_key=${api_key}`
@@ -170,4 +166,45 @@ const processDate = input_date_time => {
     let months = {1:'January', 2:'February', 3:'March', 4:'April', 5:'May', 6:'June', 7:'July', 8:'August', 9:'September', 10:'October', 11:'November', 12:'December'}
     const typeName = {'year':year, 'month':months[Number(month)], 'date':date}
     return [typeNum, typeName]
+}
+// query results 
+const getQueryResults = async query => {
+    const search_category = ['tv', 'movie', 'person']
+    var result_obj = {}
+    for(category of search_category) {
+        var result = (await fetchJSON(searchQuery(category, query))).results
+        result = (result.sort((show1,show2) => {
+            return show2.popularity - show1.popularity
+        })).slice(0,8)
+        result_obj[category] = result
+    }
+    return result_obj
+}
+// search bar ..
+const searching = _ => {
+    var searchBtn = document.getElementById('searchbtn');
+    var searchInput = document.getElementById('searchname');
+    var performSearch = function() {
+        var inputVal = searchInput.value.trim();
+        if (inputVal !== "") {
+            var currentPath = window.location.pathname;
+            var pathComponents = currentPath.split('/');
+            pathComponents.pop();
+            pathComponents.push('search_page.html');
+            const newLink = window.location.origin + pathComponents.join('/') + '?query=' + encodeURIComponent(inputVal.toLowerCase());
+            window.location.href = newLink;
+        }
+    };
+    searchBtn.addEventListener('click', function() {
+        if (!searchInput.classList.contains('show')) {
+            searchInput.classList.add('show');
+        } else {
+            performSearch();
+        }
+    });
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
 }

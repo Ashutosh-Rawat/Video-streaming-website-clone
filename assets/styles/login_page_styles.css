@@ -19,13 +19,13 @@ nav#nav-bar {
     padding: 29px 2px 20px;
 }
 #logo-container img {
-    width: 220px;
-    height: 60px;
+    width: 170px;
+    height: 46px;
 }
 
 section#login-form-wrap {
     width: 550px;
-    padding: 110px 80px 60px;
+    padding: 80px 60px 40px;
     background-color: #020100d2;
 }
 
@@ -36,7 +36,7 @@ section#login-form-wrap div.row>* {
     padding: 0;
 }
 #sign-in-label h1{
-    top: -36px;
+    top: -16px;
 }
 
 #login-pass-wrapper label {
@@ -45,6 +45,7 @@ section#login-form-wrap div.row>* {
 .def-label {
     font-size: 1.2rem;
     font-weight: 300;
+    top: 17px;
     left: 24px;
 }
 .onclick-label {
@@ -62,7 +63,6 @@ section#login-form-wrap div.row>* {
     border: none;
     box-shadow: none;
 }
-
 .text-grey {
     color: #8c8c8c !important;
 }

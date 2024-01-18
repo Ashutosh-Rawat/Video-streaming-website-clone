@@ -14,12 +14,24 @@
         <div class="d-flex row no-padding justify-content-between align-items-center">
             <header id="movie-header" class="">
                 <div class="movie-wrapper">
-                    <nav id="movie-nav" class="px-4 pt-3 pb-2">
-                        <div class="d-flex col justify-content-between">
+                    <nav id="movie-nav" class="px-4 pt-2 pb-1">
+                        <div class="d-flex col justify-content-between align-items-center">
                             <section id="logo-container" class="col-xl-3 col-lg-4 col-md-5 col-sm-7 col-12">
                                 <img class="w-50 btn no-padding border-0" src="assets/logo/netflix_logo/Netflix_Logo_RGB.png" alt="">
                             </section>
-                            <section id="profile"></section>
+                            <section class="navbar-utility h-fit-content">
+                                <div class="d-flex justify-content-between align-items-center gap-2">
+                                    <section class="search-bar">
+                                        <div class="input-container">
+                                            <div class="d-flex justify-content-end align-items-center position-relative">
+                                                <input type="text" id="searchname" class="form-control search-input font-1" placeholder="Search movies, TV shows...">
+                                                <button type="button" id="searchbtn" class="search-btn btn accent-bg text-light ml-2">Search</button>
+                                            </div>
+                                        </div>
+                                    </section>                                    
+                                    <section id="profile"></section>
+                                </div>
+                            </section>
                         </div>
                     </nav>
                 </div>
@@ -63,7 +75,7 @@
                                         <section class="btn py-2 px-4 w-100 rounded rounded-top-0 bg-dark-blue dark-blue-hover" id="movie-providers">
                                             <div class="d-flex col gap-0 justify-content-center align-items-center">
                                                 <section id="provider">
-                                                    <img src="" alt="">
+                                                    <img src="" alt="" class="rounded">
                                                 </section>
                                                 <section id="provider-status-link" class="d-inline-block">
                                                     <div class="d-flex row gap-1 no-padding justify-content-between align-items-center">
@@ -285,7 +297,7 @@
                     </a>
                 </div>
                 <p class="text-white-50 mt-3">
-                    If you appreciate the design inspired by themoviedb.org, feel free to show your support on my social media. Thank you!
+                    If you appreciate this design inspired by themoviedb.org, feel free to show your support on my social media. Thank you!
                 </p>
             </footer>                        
         </div>
@@ -301,7 +313,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- movie page scripts -->
-    <script src="assets/scripts/script_movie_overview.js"></script>
+    <script src="assets/scripts/script_movie.js"></script>
     <!-- circle plugins -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/scripts/functional_scripts/circle-progress.js"></script>

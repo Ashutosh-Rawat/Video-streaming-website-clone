@@ -16,6 +16,8 @@
     --footer-color: #262626; /* for footer color */
     --bg-black:rgb(19,18,18); /*  */
     --bg-dark-blue:#032541; /*  */
+    --bg-dark-color: #212529;
+    --bg-dark-color-hover: #2c3035;
     --very-dark-blue: #021a2e;
     --active-button-color: #01B4E4;
     --heart-color: rgb(229, 9, 20);
@@ -112,6 +114,9 @@ h1,h2,h3,h4,h5 {
     border-color: var(--accent-color);
 }
 /* font classes */
+.font-2 {
+    font-size: var(--font-2);
+}
 .font-1 {
     font-size: var(--font-1);
 }
@@ -168,6 +173,10 @@ h1,h2,h3,h4,h5 {
 .w-fit-content {
     width: fit-content;
 }
+/* heights */
+.h-fit-content {
+    height: fit-content;
+}
 /* helper classes */
 .object-fit-cover {
     object-fit: cover !important;
@@ -186,11 +195,16 @@ h1,h2,h3,h4,h5 {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+.dot {
+    font-size: .25rem;
+    vertical-align: middle;
+    margin-top: 4px;
+}
 
 /* for sliders */
 .slider-bottom {
     scroll-snap-type: x mandatory; /* Ensures items snap into place */
-    padding: .8rem 1.4rem;
+    padding: .6rem .6rem;
 }
 .slider-bottom>*{
     scroll-snap-align: start;
@@ -214,4 +228,52 @@ h1,h2,h3,h4,h5 {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: optimize-contrast;
     -ms-interpolation-mode: nearest-neighbor;
+}
+
+/* footer classes */
+footer {
+    background: linear-gradient(to right, 
+      rgba(33,33,33,1) 0%, 
+      rgba(33,33,33,0.7) 5%, 
+      rgba(12,12,12,0.6) 50%, 
+      rgba(33,33,33,0.7) 95%, 
+      rgba(33,33,33,1) 100%);
+}
+.social-links a {
+    font-size: 1.25rem; 
+    color: #ffffff;
+}
+.social-links a:hover {
+    color: #cccccc; 
+    opacity: 0.7;
+}
+.fa-twitter {
+    color: #1DA1F2; /* Twitter color */
+} 
+.fa-linkedin-in {
+    color: #0A66C2; /* LinkedIn color */
+} 
+.fa-hackerrank {
+    color: #2EC866; /* HackerRank color */
+}  
+.fa-github {
+    color: #2c2929; /* GitHub color */
+}
+
+
+/* search bar */
+.search-bar .search-input {
+    position: absolute;
+    right: 0;
+    width: 0;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.search-bar .search-input.show {
+    width: 250px;
+    position: relative;
+    opacity: 1;
+}
+.search-bar .search-btn {
+    margin-left: 10px;
 }

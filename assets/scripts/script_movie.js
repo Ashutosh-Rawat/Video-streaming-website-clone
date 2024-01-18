@@ -260,7 +260,7 @@ const displayMedia = async(result) => {
 const displayReviews = async(result) => {
     const reviews = await fetchGenericURL(getReviewsURL(result.id, show_status))
     var reviews_hasRating = reviews.filter(review => Object.values(review.author_details).every(value => value))
-    console.log(reviews_hasRating)
+    // console.log(reviews_hasRating)
     const reviewsSection = document.querySelector('.reviews-list-wrapper>ul')
     if(Array.isArray(reviews_hasRating) && (reviews_hasRating.length)) {
         const review = reviews_hasRating[0]
@@ -337,4 +337,6 @@ window.onload = async () => {
     await displayReviews(resultDetails)
     // youtube player btn
     await youtubePlayer(show_status=='movie' ? resultDetails.title : resultDetails.name)
+    // search btn
+    searching()
 }

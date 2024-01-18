@@ -8,11 +8,6 @@
 .active-button:hover {
     border-bottom: 4px solid var(--bg-dark-blue);
 }
-.dot {
-    font-size: .25rem;
-    vertical-align: middle;
-    margin-top: 4px;
-}
 /* css sections */
 #movie-header {
     background-color: var(--primary-header-color);
@@ -99,9 +94,6 @@
 /* stats */
 #show-stats {
     object-fit: contain;
-    /* background-color: var(--secondary-header-color);
-    border: 2px solid var(--secondary-header-color);
-    box-shadow: 0 0 8px 3px rgba(201, 201, 201, 0.2); */
 }
 #show-stats span {
     padding: 0;
@@ -145,33 +137,4 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;
-}
-/* footer classes */
-footer {
-    background: linear-gradient(to right, 
-      rgba(33,33,33,1) 0%, 
-      rgba(33,33,33,0.7) 5%, 
-      rgba(12,12,12,0.6) 50%, 
-      rgba(33,33,33,0.7) 95%, 
-      rgba(33,33,33,1) 100%);
-}
-.social-links a {
-    font-size: 1.25rem; 
-    color: #ffffff;
-}
-.social-links a:hover {
-    color: #cccccc; 
-    opacity: 0.7;
-}
-.fa-twitter {
-    color: #1DA1F2; /* Twitter color */
-} 
-.fa-linkedin-in {
-    color: #0A66C2; /* LinkedIn color */
-} 
-.fa-hackerrank {
-    color: #2EC866; /* HackerRank color */
-}  
-.fa-github {
-    color: #2c2929; /* GitHub color */
 }

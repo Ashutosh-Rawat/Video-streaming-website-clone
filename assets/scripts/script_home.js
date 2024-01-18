@@ -136,7 +136,7 @@ function scrollMovies() {
 
 // main functionality
 window.onload = async function() {
-    await homeButton()
+    homeButton()
     showLoader()
     // for showing featured movie .. which has a background in page
     featured_banner()
@@ -146,4 +146,6 @@ window.onload = async function() {
     mapMovies()
     // enables scrolling left and right in netflix movie section
     scrollMovies()    
+    // search bar
+    searching()
 }

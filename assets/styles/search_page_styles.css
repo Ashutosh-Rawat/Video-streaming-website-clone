@@ -1,0 +1,50 @@
+@import url(/assets/styles/helper_classes.css);
+
+/* css sections */
+#movie-header {
+    background-color: var(--primary-header-color);
+}
+#movie-nav {
+    background-color: var(--secondary-header-color);
+}
+
+/* search category */
+.search-category-wrapper {
+    border: 1px solid var(--secondary-header-color) !important;
+}
+.active-category {
+    background-color: var(--bg-dark-color-hover) !important;
+}
+.active-category .counter {
+    background-color: white !important;
+    color: black !important;
+}
+/* images */
+.result-item>div {
+    height: 141px;
+}
+.search-img-poster {
+    height: 100%;
+    width: 94px;
+}
+.result-query-details {
+    width: 86% !important;
+}
+.result-query-overview {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+/* person results */
+.person-poster {
+    height: 70px;
+    width: 70px;
+}
+.counter {
+    border-radius: 4px;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+    vertical-align: middle;
+}

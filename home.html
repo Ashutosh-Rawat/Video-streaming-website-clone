@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/534bf90a70.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="assets/logo/netflix_symbol/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles/helper_classes.css">
 </head>
 <body>    
     <section id="container-home" class="">
@@ -21,10 +22,16 @@
                                     <section id="logo-container">
                                         <img class="btn p-0 border-0" src="assets/logo/netflix_logo/Netflix_Logo_RGB.png" alt="">
                                     </section>
-                                    <section id="search-theme-profile">
-                                        <div class="d-flex row gap-2 justify-content-between align-items-center">
-                                            <section id="search-movies"></section>
-                                            <section id="toggle-day-dark"></section>
+                                    <section class="navbar-utility h-fit-content">
+                                        <div class="d-flex justify-content-between align-items-center gap-2">
+                                            <section class="search-bar">
+                                                <div class="input-container">
+                                                    <div class="d-flex justify-content-end align-items-center position-relative">
+                                                        <input type="text" id="searchname" class="form-control search-input font-1" placeholder="Search movies, TV shows...">
+                                                        <button type="button" id="searchbtn" class="search-btn btn accent-bg text-light ml-2">Search</button>
+                                                    </div>
+                                                </div>
+                                            </section>                                    
                                             <section id="profile"></section>
                                         </div>
                                     </section>
@@ -87,7 +94,7 @@
                                         </section>
                                         <section id="netflix-originals-moviesX" class="position-relative">
                                             <button type="button" class="btn scroll-btn left-scroll d-none start-0 position-absolute"><i class="fa-solid fa-chevron-left"></i></button>
-                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between mt-2"></ul>
+                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between my-2"></ul>
                                             <button type="button" class="btn scroll-btn right-scroll end-0 position-absolute"><i class="fa-solid fa-chevron-right"></i></button>
                                         </section>    
                                     </div>
@@ -99,7 +106,7 @@
                                         </section>
                                         <section id="netflix-originals-tvY" class="position-relative">
                                             <button type="button" class="btn scroll-btn left-scroll d-none start-0 position-absolute"><i class="fa-solid fa-chevron-left"></i></button>
-                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between mt-2"></ul>
+                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between my-2"></ul>
                                             <button type="button" class="btn scroll-btn right-scroll end-0 position-absolute"><i class="fa-solid fa-chevron-right"></i></button>
                                         </section>    
                                     </div>
@@ -111,7 +118,7 @@
                                         </section>
                                         <section id="trending-now-moviesX" class="position-relative">
                                             <button type="button" class="btn scroll-btn left-scroll d-none start-0 position-absolute"><i class="fa-solid fa-chevron-left"></i></button>
-                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between mt-2"></ul>
+                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between my-2"></ul>
                                             <button type="button" class="btn scroll-btn right-scroll end-0 position-absolute"><i class="fa-solid fa-chevron-right"></i></button>
                                         </section>    
                                     </div>
@@ -123,7 +130,7 @@
                                         </section>
                                         <section id="trending-now-tvY" class="position-relative">
                                             <button type="button" class="btn scroll-btn left-scroll d-none start-0 position-absolute"><i class="fa-solid fa-chevron-left"></i></button>
-                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between mt-2"></ul>
+                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between my-2"></ul>
                                             <button type="button" class="btn scroll-btn right-scroll end-0 position-absolute"><i class="fa-solid fa-chevron-right"></i></button>
                                         </section>    
                                     </div>
@@ -135,7 +142,7 @@
                                         </section>
                                         <section id="top-rated-movies" class="position-relative">
                                             <button type="button" class="btn scroll-btn left-scroll d-none start-0 position-absolute"><i class="fa-solid fa-chevron-left"></i></button>
-                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between mt-2"></ul>
+                                            <ul class="scroll-transition d-flex col gap-2 justify-content-start align-items-between my-2"></ul>
                                             <button type="button" class="btn scroll-btn right-scroll end-0 position-absolute"><i class="fa-solid fa-chevron-right"></i></button>
                                         </section>    
                                     </div>
@@ -145,10 +152,25 @@
                     </div>
                 </div>
             </main>
-            <footer class="footer pt-5 pb-3">
-                <div class="home-wrapper mx-auto bg-primary text-white text-center py-3">
-                  <span>Created by Ashutosh Singh Rawat on 15 Nov 2023</span>
+            <footer id="movie-footer" class="mt-4 mb-2 w-100 mx-auto rounded text-center py-2">
+                <p class="text-white mb-0 mt-2">Created by Ashutosh Singh Rawat</p>
+                <div class="d-flex justify-content-center align-items-center pt-2">
+                    <a href="https://twitter.com/NerdForNothing" class="text-white mx-2">
+                        <i class="fab fa-twitter fa-lg"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/aashu-rawat/" class="text-white mx-2">
+                        <i class="fab fa-linkedin-in fa-lg"></i>
+                    </a>
+                    <a href="https://www.hackerrank.com/profile/ashutoshrawat325" class="text-white mx-2">
+                        <i class="fab fa-hackerrank fa-lg"></i>
+                    </a>
+                    <a href="https://github.com/Ashutosh-Rawat" class="text-white mx-2">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
                 </div>
+                <p class="text-white-50 mt-3">
+                    If you appreciate this design inspired by themoviedb.org, feel free to show your support on my social media. Thank you!
+                </p>
             </footer>
         </div>
     </section>
