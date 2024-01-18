@@ -185,6 +185,9 @@ const searching = _ => {
         var inputVal = searchInput.value.trim();
         if (inputVal !== "") {
             let baseUrl = window.location.origin;
+            if (baseUrl.startsWith("https://") && !baseUrl.endsWith("/Video-streaming-website-clone")) {
+                    baseUrl = baseUrl + "/Video-streaming-website-clone";
+            }
             let newUrl = baseUrl + "/search_page.html"+'?query=' + encodeURIComponent(inputVal.toLowerCase());
             console.log(newUrl)
             window.location.href = newUrl
