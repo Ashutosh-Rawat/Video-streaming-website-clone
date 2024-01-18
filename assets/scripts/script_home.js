@@ -75,7 +75,7 @@ async function generatePoster(results, currentDiv) {
                 let baseUrl = window.location.origin;
                 let newUrl = baseUrl + "/movie.html"+`?id=${result.id}&show_status=${show_status}`;
                 console.log(newUrl)
-                window.location.href = newUrl
+                // window.location.href = newUrl
             });
         })
     } else {
