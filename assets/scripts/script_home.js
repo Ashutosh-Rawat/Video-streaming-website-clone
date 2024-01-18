@@ -78,6 +78,7 @@ async function generatePoster(results, currentDiv) {
                 }        
                 let newUrl = baseUrl + "/movie.html" + `?id=${result.id}&show_status=${show_status}`;
                 console.log(newUrl);
+                window.location.href = newUrl
             });
         })
     } else {
