@@ -114,13 +114,10 @@ const fetchJSON = async (url) => {
 
 const homeButton = () => {
     document.querySelector('#logo-container>img').addEventListener('click', () => {
-        var currentPath = window.location.pathname
-        var pathComponents = currentPath.split('/')
-        pathComponents.pop()
-        pathComponents.push('home.html')
-         
-        const newLink = baseLink+pathComponents.join('/')
-        window.location.href = newLink
+        let baseUrl = window.location.origin;
+        let newUrl = baseUrl + "/home.html"
+        console.log(newUrl)
+        window.location.href = newUrl
     })
 }
 const displayCircularProgress = (vote_average) => {
@@ -187,12 +184,10 @@ const searching = _ => {
     var performSearch = function() {
         var inputVal = searchInput.value.trim();
         if (inputVal !== "") {
-            var currentPath = window.location.pathname;
-            var pathComponents = currentPath.split('/');
-            pathComponents.pop();
-            pathComponents.push('search_page.html');
-            const newLink = window.location.origin + pathComponents.join('/') + '?query=' + encodeURIComponent(inputVal.toLowerCase());
-            window.location.href = newLink;
+            let baseUrl = window.location.origin;
+            let newUrl = baseUrl + "/search_page.html"+'?query=' + encodeURIComponent(inputVal.toLowerCase());
+            console.log(newUrl)
+            window.location.href = newUrl
         }
     };
     searchBtn.addEventListener('click', function() {

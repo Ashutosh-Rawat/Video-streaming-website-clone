@@ -71,6 +71,8 @@ const createPersonItem = async (parentdiv, resultSet) => {
 }
 
 window.onload = async _ => {
+    showLoader()
+    homeButton()
     await displaySearchResults()
     searching()
     const categories = document.querySelectorAll('.result-category');

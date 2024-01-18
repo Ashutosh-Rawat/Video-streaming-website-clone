@@ -72,13 +72,10 @@ async function generatePoster(results, currentDiv) {
                 if(result.name) show_status = 'tv'
                 else show_status = 'movie'
 
-                var currentPath = window.location.pathname
-                console.log('current',currentPath)
-                var pathComponents = currentPath.split('/')
-                pathComponents.pop()
-                pathComponents.push('movie.html')
-                const newPath = baseLink+pathComponents.join('/')+`?id=${result.id}&show_status=${show_status}`
-                window.location.href = newPath;
+                let baseUrl = window.location.origin;
+                let newUrl = baseUrl + "/movie.html"+`?id=${result.id}&show_status=${show_status}`;
+                console.log(newUrl)
+                window.location.href = newUrl
             });
         })
     } else {
